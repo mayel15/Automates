@@ -1,0 +1,98 @@
+# alphabet
+1
+2
+5
+S
+L
+s
+l
+d
+v
+c
+# etats
+q0
+q1
+q1second
+q2
+q2second
+q3
+q3second
+q4
+q4prime
+q4second
+q5
+q5prime
+q5second
+q5tierce
+q6
+q7
+q8
+q9
+q10
+q11
+q13
+q14
+q15
+q16
+q17
+q18
+# etat initial
+q0
+# etats finaux
+qf
+# transitions
+q0 L q0
+q0 S q0
+q0 1 q1
+q0 2 q2
+q0 5 q5
+q1 1 q2
+q1 L q1
+q1 S q1
+q7 s qf
+q1 5 q1second
+q1second d q5
+q2 1 q3
+q2 L q2
+q2 S q2
+q8 d q9
+q9 s qf
+q2 5 q2second
+q2second v q5
+q3 1 q4
+q3 L q3
+q3 S q7
+q3 5 q3second
+q3second d q13
+q13 v q5
+q3second v q14
+q14 d q5
+q4 1 q5
+q4 L q4
+q4 S q8
+q4 2 q4prime
+q4prime d q5
+q4 5 q4second
+q4second v q15
+q15 v q5
+q15 d q16
+q16 d q5
+q4second d q17
+q17 d q15
+q17 v q18
+q18 d q5
+q0 5 q5
+q5 2 q5prime
+q5prime v q5
+q5 5 q5second
+q5second c q5second
+q5 1 q5tierce
+q5tierce d q5
+q5 L q6
+q5 S q10
+q6 l qf
+q10 v q11
+q11 s qf
+q1 2 q3
+q2 2 q4
+q3 2 q5

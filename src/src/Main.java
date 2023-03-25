@@ -2,6 +2,7 @@ package src;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,34 +12,46 @@ public class Main {
     public static void main(String[] args) throws FileNotFoundException {
         //System.out.println("Hello world!");
         // read a file
-        InputStream ins = new FileInputStream("C:\\fichiers\test.txt");
+        /*InputStream ins = new FileInputStream("C:\\fichiers\automate1.txt");
         Scanner obj = new Scanner(ins);
-        while(obj.hasNextLine()) System.out.println(obj.nextLine());
+        while(obj.hasNextLine()) System.out.println(obj.nextLine());*/
 
         //test
-        ArrayList<String> symb = null;
+        /*ArrayList<String> symb = new ArrayList<>();
         symb.add("a");
         symb.add("b");
         Alphabet alphabet = new Alphabet(symb);
 
-        ArrayList<Integer> etats = null;
-        etats.add(1); etats.add(2); etats.add(3);
-        Integer etatI = etats.get(0);
-        ArrayList<Integer> etatF = null;
+        ArrayList<String> etats = new ArrayList<>();
+        etats.add("S1"); etats.add("S2"); etats.add("S3");
+        String etatI = etats.get(0);
+        ArrayList<String> etatF = new ArrayList<>();
         etatF.add(etats.get(2));
 
-        ArrayList<Transition> transitions = null;
-        Transition t1 = new Transition(1, "a",1);
+        ArrayList<Transition> transitions = new ArrayList<>();
+        Transition t1 = new Transition("S1", "a","S1");
         transitions.add(t1);
-        Transition t2 = new Transition(1, "b",2);
+        Transition t2 = new Transition("S1", "b","S2");
         transitions.add(t2);
-        Transition t3 = new Transition(2, "b",2);
+        Transition t3 = new Transition("S2", "b","S2");
         transitions.add(t3);
-        Transition t4 = new Transition(2, "a",3);
-        transitions.add(t4);
+        Transition t4 = new Transition("S2", "a","S3");
+        transitions.add(t4);*/
 
-        Automate automate = new Automate(alphabet, etats, etatI, etatF, transitions);
+        Automate automate = null;
+        try {
+            automate = new Automate("src/files/automate2.txt");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        String[] mots = {"21Ss", "5Svs", "L22L1Ll", "2Ss", "5S5s", "d51l", "2115dvdSvs" };
+        //String[] mots = {"ab", "abba", "bba", "aba", "abbbba", "aaabbbba"};
+        for(String mot : mots){
+            System.out.println(mot + " "+ automate.appartient(mot));
+        }
 
-        System.out.println(automate.appartient("a"));
+        //System.out.println(automate.appartient("ab"));
+
+
     }
 }

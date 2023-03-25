@@ -1,30 +1,30 @@
 package src;
 public class Transition {
-    protected int etatI;
+    protected String etatI;
     protected String symbole;
-    protected int etatF;
+    protected String etatF;
 
 
-    public Transition(Integer etatI, String symbole,Integer etatF) {
+    public Transition(String etatI, String symbole, String etatF) {
         this.etatI = etatI;
         this.symbole = symbole;
         this.etatF = etatF;
 
     }
 
-    public int getEtatI() {
+    public String getEtatI() {
         return etatI;
     }
 
-    public void setEtatI(Integer etatI) {
+    public void setEtatI(String etatI) {
         this.etatI = etatI;
     }
 
-    public int getEtatF() {
+    public String getEtatF() {
         return etatF;
     }
 
-    public void setEtatF(Integer etatF) {
+    public void setEtatF(String etatF) {
         this.etatF = etatF;
     }
 
@@ -34,5 +34,9 @@ public class Transition {
 
     public void setSymbole(String symbole) {
         this.symbole = symbole;
+    }
+
+    public String toString(){
+        return etatI + " " +symbole + " " + etatF ;
     }
 }
