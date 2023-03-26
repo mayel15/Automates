@@ -1,0 +1,7 @@
+# mots
+ab
+abba
+bba
+aba
+abbbba
+aaabbbba
