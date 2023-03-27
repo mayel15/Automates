@@ -68,12 +68,13 @@ public class Automate {
         // Initialisation de l'état courant avec l'état initial de l'automate
         String etatCourant = etatI;
 
-        // Parcours du mot caractère par caractère
+        // Parcours du mot avec chaque caractère
         for (int i = 0; i < mot.length(); i++) {
             String symboleLu = Character.toString(mot.charAt(i));
 
             // Vérification que le symbole lu appartient à l'alphabet de l'automate
             if (!alphabet.getSymboles().contains(symboleLu)) {
+                System.out.println("La sequence d'actions n'a pas été acceptée.");
                 System.out.println("Le symbole " + symboleLu + " n'appartient pas à l'alphabet de l'automate.");
                 return false;
             }
@@ -89,6 +90,7 @@ public class Automate {
 
             // Vérification qu'une transition a bien été trouvée
             if (transition == null) {
+                System.out.println("La sequence d'actions n'a pas été acceptée.");
                 System.out.println("Il n'y a pas de transition à partir de l'état " + etatCourant + " avec le symbole " + symboleLu + ".");
                 return false;
             }
@@ -99,11 +101,13 @@ public class Automate {
 
         // Vérification que l'état courant est bien un état final
         if (!etatF.contains(etatCourant)) {
+            System.out.println("La sequence d'actions n'a pas été acceptée.");
             System.out.println("Le mot a été entièrement lu mais l'état courant (" + etatCourant + ") n'est pas un état final.");
             return false;
         }
 
         // Si on arrive ici, le mot a été reconnu
+        System.out.println("La sequence d'actions a été acceptée.");
         return true;
     }
 

@@ -5,3 +5,5 @@ bba
 aba
 abbbba
 aaabbbba
+acba
+abbb

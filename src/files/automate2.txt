@@ -85,7 +85,7 @@ q0 5 q5
 q5 2 q5prime
 q5prime v q5
 q5 5 q5second
-q5second c q5second
+q5second c q5
 q5 1 q5tierce
 q5tierce d q5
 q5 L q6

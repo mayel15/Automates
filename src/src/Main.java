@@ -19,7 +19,7 @@ public class Main {
         while ((line = br.readLine()) != null) {
             if (line.equals("# mots")) {
                 while (/*(line = br.readLine()) != null &&*/ !(line = br.readLine()).startsWith("#")) {
-                    System.out.println(line + " "  + automate.appartient(line));
+                    System.out.println(line + " "  + automate.appartient(line) + "\n");
                 }
             }
         }
