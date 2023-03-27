@@ -1,3 +1,4 @@
+// Pape THIAM
 package src;
 public class Transition {
     protected String etatI;
